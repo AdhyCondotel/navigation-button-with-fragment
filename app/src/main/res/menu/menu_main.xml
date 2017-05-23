@@ -7,6 +7,14 @@
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/action_camera"
+        android:layout_height="100dp"
+        android:icon="@drawable/ic_add_a_photo_black_24dp"
+        android:title="@string/camera"
+        app:showAsAction="ifRoom"/>
+
+
+
     <item android:id="@+id/action_akun"
         android:icon="@drawable/ic_share_black_24dp"
         android:title="@string/akun"

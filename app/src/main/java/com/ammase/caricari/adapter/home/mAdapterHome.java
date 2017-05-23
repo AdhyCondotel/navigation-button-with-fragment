@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ammase.caricari.MainActivity;
 import com.ammase.caricari.R;
 import com.ammase.caricari.model.home.BeritaItem;
+import com.ammase.caricari.ui.activity.DetailMainActivity;
+import com.ammase.caricari.ui.activity.akun.AkunMainActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -54,6 +57,9 @@ public class mAdapterHome extends RecyclerView.Adapter<mAdapterHome.MyViewHolder
         holder.txtNamaUser.setText(resultsList.get(position).getJudul());
         holder.txtTglUpdate.setText("Update :" + resultsList.get(position).getTglPosting());
         holder.txtNanaObject.setText(resultsList.get(position).getJudul());
+        holder.txtLocation.setText("JL. Santapan Buaya No 15");
+        holder.txtLike.setText("Like : 25");
+        holder.txtVisit.setText("Visit : 100");
         Glide.with(mContext).load(resultsList.get(position).getUrlGambar())
                 .thumbnail(0.2f)
                 .crossFade()
@@ -67,6 +73,23 @@ public class mAdapterHome extends RecyclerView.Adapter<mAdapterHome.MyViewHolder
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.imgUser);
 
+        holder.imgObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent detail = new Intent(mContext, DetailMainActivity.class);
+                    detail.putExtra("item_namaUser", "nama");
+                v.getContext().startActivity(detail);
+            }
+        });
+
+        holder.imgUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent detail = new Intent(mContext, AkunMainActivity.class);
+                    detail.putExtra("item_namaUser", "nama");
+                v.getContext().startActivity(detail);
+            }
+        });
     }
 
     @Override
@@ -83,7 +106,6 @@ public class mAdapterHome extends RecyclerView.Adapter<mAdapterHome.MyViewHolder
         @BindView(R.id.textViewLocation) TextView txtLocation;
         @BindView(R.id.textViewLike) TextView txtLike;
         @BindView(R.id.textViewVisit) TextView txtVisit;
-        LinearLayout Linear;
 
         public MyViewHolder(View view) {
             super(view);

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#38ACEC</color>
-    <color name="colorPrimaryDark">#38ACEC</color>
+    <color name="colorPrimary">#00AA8D</color>
+    <color name="colorPrimaryDark">#008975</color>
     <color name="colorAccent">#ed7839</color>
 
-    <color name="tab_checked">#3F51B5</color>
+    <color name="bag_profile">#eeeeee</color>
+
+    <color name="tab_checked">#00BF9A</color>
     <color name="tab_unchecked">#757575</color>
 </resources>
