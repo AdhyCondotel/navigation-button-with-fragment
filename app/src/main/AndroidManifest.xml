@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.DetailMainActivity" />
-        <activity android:name=".ui.activity.akun.AkunMainActivity"></activity>
+        <activity android:name=".ui.activity.akun.AkunMainActivity" />
+        <activity android:name=".ui.activity.search.SearchMainActivity"></activity>
     </application>
 
 </manifest>

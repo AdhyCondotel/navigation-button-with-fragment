@@ -36,4 +36,5 @@ public class ResultGetGaleri{
 			",success = '" + success + '\'' + 
 			"}";
 		}
+
 }

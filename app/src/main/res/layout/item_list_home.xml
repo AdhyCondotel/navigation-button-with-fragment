@@ -103,10 +103,10 @@
                             android:layout_toStartOf="@+id/imageViewBtnFavorite"
                             android:layout_weight="1"
                             android:ellipsize="end"
-                            android:maxLines="1"
+                            android:maxLines="2"
                             android:text="Panorama Gunung"
                             android:textColor="@android:color/black"
-                            android:textSize="14sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -136,15 +136,6 @@
 
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageViewBtnFavorite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/activity_all_margin"
-                    app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
             </RelativeLayout>
 
 
@@ -158,21 +149,42 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textViewLike"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Like 25"
-                    android:textSize="10sp" />
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewBtnFavorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_all_margin"
+                        android:tint="@color/tab_unchecked"
+                        app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/textViewLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_all_margin"
+                        android:text="Like 25"
+                        android:textSize="10sp" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textViewVisit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:text="Visit 215"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="215 Visit"
                     android:textSize="10sp" />
 
                 <TextView
@@ -180,9 +192,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_all_margin"
-                    android:layout_weight="1"
                     android:gravity="right"
-                    android:text="Categori : Warung Makan"
+                    android:text="Warung Makan"
                     android:textSize="10sp" />
 
             </LinearLayout>

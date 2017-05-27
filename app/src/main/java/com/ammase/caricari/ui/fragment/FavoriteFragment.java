@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.ammase.caricari.R;
 import com.ammase.caricari.adapter.favorite.mAdapterFavorite;
@@ -64,25 +65,24 @@ public class FavoriteFragment extends Fragment implements SwipeRefreshLayout.OnR
     }
 
     private void requestDataPromo() {
-        RequestInterface api = RetroClient.getApiService();
+        RequestInterface api = RetroClient.getClient().create(RequestInterface.class);
         Call<ResultGetGaleri> call = api.getGaleri();
         call.enqueue(new Callback<ResultGetGaleri>() {
             @Override
             public void onResponse(Call<ResultGetGaleri> call, Response<ResultGetGaleri> response) {
                 ResultGetGaleri jsonResponse = response.body();
-                try {
+                if (jsonResponse.getSuccess() == 1){
                     listItem = new ArrayList<>(jsonResponse.getGaleri());
                     mAdapter.setListItem(listItem);
                     mAdapter.notifyDataSetChanged();
+                    recyclerView.setVisibility(View.VISIBLE);
 
-
-                }catch (Exception e) {
-                    e.printStackTrace();
-
+                } else {
+                    Toast.makeText(getActivity(), "Server tidak merespon....", Toast.LENGTH_SHORT).show();
 
                 }
                 swipeRefreshLayout.setRefreshing(false);
-                recyclerView.setVisibility(View.VISIBLE);
+
 
             }
 

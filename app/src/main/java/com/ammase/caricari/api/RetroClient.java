@@ -1,5 +1,6 @@
 package com.ammase.caricari.api;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -8,27 +9,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetroClient {
 
-    /********
-     * URLS
-     *******/
+    public static final String URL      = "http://android.karebosimobileapp.com/";
+    public static Retrofit RETROFIT     = null;
 
-    /**
-     * Get Retrofit Instance
-     */
-    private static Retrofit getRetrofitInstance() {
-        return new Retrofit.Builder()
-                .baseUrl("http://android.karebosimobileapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-    }
-
-    /**
-     * Get API Service
-     *
-     * @return API Service
-     */
-    public static RequestInterface getApiService() {
-        return getRetrofitInstance().create(RequestInterface.class);
+    public static Retrofit getClient(){
+        if(RETROFIT==null){
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .addInterceptor(new LoggingInterceptor())
+                    .build();
+            RETROFIT = new Retrofit.Builder()
+                    .baseUrl(URL)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return RETROFIT;
     }
 
 }

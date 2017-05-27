@@ -62,8 +62,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         return home;
     }
     private void requestDataPromo() {
-
-        RequestInterface api = RetroClient.getApiService();
+        RequestInterface api = RetroClient.getClient().create(RequestInterface.class);
         Call<ResultGetBerita> call = api.getBerita();
         call.enqueue(new Callback<ResultGetBerita>() {
             @Override

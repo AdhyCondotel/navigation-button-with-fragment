@@ -21,63 +21,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/colorButtonNormal"
-                android:orientation="vertical"
-                android:padding="@dimen/activity_horizontal_margin">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="MENCARI DATA DENGAN \nMUDAH DAN CEPAT"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:typeface="serif" />
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:layout_marginTop="25dp"
-                    android:background="@drawable/button_bg"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="Please Text"
-                    android:inputType="textPersonName"
-                    android:padding="@dimen/activity_horizontal_margin" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@android:dimen/notification_large_icon_height"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:background="@drawable/button_bg2"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Search"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        app:srcCompat="@drawable/ic_search_black_24dp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="@dimen/activity_horizontal_margin">
 
@@ -99,6 +42,70 @@
                     android:id="@+id/recyclerViewCategory"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="7dp"
+                android:background="#FFE1E1E1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="MENCARI DATA DENGAN \nMUDAH DAN CEPAT"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <EditText
+                    android:id="@+id/editTextSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_bg"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Please Text"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="@android:dimen/notification_large_icon_height"
+                    android:background="@drawable/button_bg2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_search_black_24dp" />
+
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
